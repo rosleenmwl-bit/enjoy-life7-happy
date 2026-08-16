@@ -5,6 +5,7 @@ import { createPlanRecord } from "@/lib/data/plans";
 import { getPreferenceById } from "@/lib/data/preferences";
 import { buildDayPlan } from "@/lib/planner/builder";
 import { scoreActivities } from "@/lib/scoring/engine";
+import { getWeatherForecast } from "@/lib/weather/adapter";
 
 export async function POST(request: Request) {
   try {
@@ -22,14 +23,38 @@ export async function POST(request: Request) {
     }
 
     const scored = scoreActivities(activities, preference);
-    const slots = buildDayPlan(scored, preference);
-    const plan = await createPlanRecord({ preference, slots });
+    const weather = await getWeatherForecast(preference);
+    const slots = buildDayPlan(scored, preference, {
+      rainExpected: weather?.rainExpected,
+    });
+    const plan = await createPlanRecord({
+      preference,
+      slots,
+      weatherSummary: weather?.summary,
+      weatherSource: weather?.source,
+    });
     await createAuditLog({
       action: "plan_generated",
       entityType: "plan",
       entityId: plan.id,
-      details: { preference_id: preference.id, weather_applied: false },
+      details: {
+        preference_id: preference.id,
+        weather_applied: Boolean(weather),
+        rain_adaptation: weather?.rainExpected ?? false,
+      },
     });
+    if (weather) {
+      await createAuditLog({
+        action: "weather_applied",
+        entityType: "plan",
+        entityId: plan.id,
+        details: {
+          source: weather.source,
+          rain_expected: weather.rainExpected,
+          precipitation_probability: weather.precipitationProbability,
+        },
+      });
+    }
 
     return NextResponse.json({ planId: plan.id });
   } catch (error) {
