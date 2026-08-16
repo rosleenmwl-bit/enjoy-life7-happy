@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "EnjoyLife | A good day, planned gently",
   description:
-    "A calm lifestyle companion that matches Perth activities to your pace, comfort, mood, and budget.",
+    "A calm lifestyle companion that matches Kuala Lumpur-area activities to your pace, comfort, mood, and budget.",
 };
 
 export default function RootLayout({

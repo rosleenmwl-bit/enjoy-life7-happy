@@ -3,7 +3,7 @@
 ## v1 Success Scenario (end of Sprint 3)
 1. Open app in browser (not logged in) → browse page loads with 6 activity cards
 2. Tap "Start" or "Plan My Day" → onboarding begins
-3. Answer all 11 questions (one per screen): Perth CBD, Nature & Outdoors, 8 hours, $60, relaxed, 800m, car, couple, either, prefer flat paths with seating, no dietary restrictions
+3. Answer all 11 questions (one per screen): Kuala Lumpur, Nature & Outdoors, 8 hours, $60, relaxed, 800m, car, couple, either, prefer flat paths with seating, no dietary restrictions
 4. Complete onboarding → redirected to recommendations page
 5. Verify: 3+ recommendation cards visible, each with EnjoyLife Score (0–100), match label, explanation text, duration, walking distance, cost, parking, transport, toilets, effort level
 6. Verify: cards sorted by score descending; top card shows 🟢 Excellent or Good Match

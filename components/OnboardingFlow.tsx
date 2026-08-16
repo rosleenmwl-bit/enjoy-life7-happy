@@ -19,7 +19,7 @@ type Answers = {
 };
 
 const initialAnswers: Answers = {
-  location_text: "Perth CBD",
+  location_text: "Kuala Lumpur",
   mood_category: "Nature & Outdoors",
   available_time_mins: 480,
   budget_per_person: 60,
@@ -92,8 +92,8 @@ export function OnboardingFlow() {
           indoor_outdoor_pref: answers.indoor_outdoor_pref,
           comfort_notes: answers.comfort_notes,
           food_preferences: { dietary: answers.food_preference },
-          lat: -31.95,
-          lng: 115.86,
+          lat: 3.139,
+          lng: 101.6869,
         }),
       });
       const result = await response.json();

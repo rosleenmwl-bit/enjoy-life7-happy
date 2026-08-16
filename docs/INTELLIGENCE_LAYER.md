@@ -14,7 +14,7 @@ Onboarding answers are free-form selections. The scoring engine normalizes them 
 ## Auto-Structure Example
 ```json
 {
-  "location": {"text": "Perth CBD", "lat": -31.95, "lng": 115.86},
+  "location": {"text": "Kuala Lumpur", "lat": 3.139, "lng": 101.6869},
   "mood_category": "Nature & Outdoors",
   "time_budget_mins": 480,
   "budget_aud": 60,

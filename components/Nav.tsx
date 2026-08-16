@@ -38,7 +38,7 @@ export function Nav() {
           <span className="brand-mark">E</span>
           <span>EnjoyLife</span>
         </Link>
-        <p className="brand-subtitle">Good days, made gently.</p>
+        <p className="brand-subtitle">Good days, made perfect.</p>
         <nav aria-label="Main navigation">
           {links.map((link) => {
             const active =
@@ -61,7 +61,10 @@ export function Nav() {
         </nav>
         <div className="sidebar-note">
           <span aria-hidden="true">🌿</span>
-          <p>Take your time. There is no rush here.</p>
+          <p>
+            <span>Take your time.</span>
+            <span>There is no rush here.</span>
+          </p>
         </div>
       </aside>
       {open ? (
