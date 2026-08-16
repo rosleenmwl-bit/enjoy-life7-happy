@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { Nav } from "@/components/Nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "vibe-stack-supabase",
-  description: "Next.js + Supabase starter",
+  title: "EnjoyLife | A good day, planned gently",
+  description:
+    "A calm lifestyle companion that matches Perth activities to your pace, comfort, mood, and budget.",
 };
 
 export default function RootLayout({
@@ -13,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body>
+        <Nav />
+        <div className="app-content">{children}</div>
+      </body>
     </html>
   );
 }
