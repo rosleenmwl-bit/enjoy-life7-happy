@@ -11,7 +11,7 @@ export default async function Home() {
     <main className="page-shell">
       <section className="hero-card">
         <div className="hero-main">
-          <p className="eyebrow">Kuala Lumpur ideas, chosen around you</p>
+          <p className="eyebrow home-eyebrow">Kuala Lumpur ideas, chosen around you</p>
           <h1>What would you enjoy doing today?</h1>
           <p className="hero-copy">
             Tell us what feels right and we’ll shape a comfortable day around your
@@ -21,7 +21,7 @@ export default async function Home() {
         <div className="hero-aside">
           <div
             className="hero-heart"
-            aria-label="Enjoy Life. Make the Most out of Every Day."
+            aria-label="Enjoy Life. Make the Most out of Every Day. Are you ready to start enjoy life again?"
           >
             <svg viewBox="0 0 240 210" aria-hidden="true">
               <defs>
@@ -48,11 +48,11 @@ export default async function Home() {
               <strong>Enjoy Life</strong>
               <span>Make the Most</span>
               <span>out of Every Day</span>
+              <small>
+                Are you ready to start<br />enjoy life again?
+              </small>
             </div>
           </div>
-          <p className="hero-heart-caption">
-            Are you ready to start<br />enjoy life again?
-          </p>
           <Link href="/plan/onboarding" className="primary-button hero-button">
             Plan my day <span aria-hidden="true">→</span>
           </Link>
@@ -62,7 +62,7 @@ export default async function Home() {
       <section aria-labelledby="browse-title" className="browse-section">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Browse at your own pace</p>
+            <p className="eyebrow home-eyebrow">Browse at our own pace</p>
             <h2 id="browse-title">Ideas for a lovely day</h2>
           </div>
           <p>{activities.length} local options</p>
